@@ -5,7 +5,7 @@
 :root {
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(244, 75%, 57%);
+  --first-color: hsl(244, 82%, 63%);
   --second-color: hsl(249, 64%, 47%);
   --title-color: hsl(244, 12%, 12%);
   --text-color: hsl(244, 4%, 36%);
