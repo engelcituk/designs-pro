@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: arial;
+}
+
+.nav{
+    background-color: slateblue;
+}
+
+.nav__container{
+    width: 90%;
+    margin: 0 auto; /*entre horizontalmente*/
+    height: 70px; /*Sino pongo el height no hay manera de hacer el align-content */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    color: white;
+
+    /* justify-content: space-between; */
+}
+
+/* Vamos a seleccionar al primer elemento navlink */
+.nav__link:first-of-type{
+    margin-left: auto; /*Para que rellene automaticamente hacia la izquierda, esto hará que se peguen a la derecha*/
+}
+
+.nav__link{
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;/*centrado horizontal*/
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero *{
+    outline: 1px solid red;
+}
+
+.hero__img{
+    width: 100%;
+    display: block; /*Por defecto las imagenes tienen un borde, al poner block este se quita*/
+    max-width: 400px; /*Para que al agrandar el viewport la imagen llegue a un limite de width*/
+    margin: 0 auto; /*ccentro horizontalmente*/
+}
+
+.hero__texts{
+    display: flex;
+    flex-direction: column;
+    /* align-items: stretch; */
+    gap: 1rem;
+    text-align: center;
+}
+
+.hero__title{
+    font-size: 2.5rem;
+}
+
+.hero__cta{
+    background-color: slateblue;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    align-self: center;
+}
+
+@media (min-width:768px){
+
+    .hero{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero__picture{
+        order: 1; /*Muevo el container que trae la imagen a la derecha o la position 2*/
+        width: 50%;
+    }
+
+    .hero__img{
+        max-width: none;
+    }
+
+    .hero__texts{
+        width: 45%;
+        text-align: left;
+    }
+
+    .hero__cta{
+        align-self: flex-start; /*AL principio*/
+    }
+    
+}
