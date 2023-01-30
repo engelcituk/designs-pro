@@ -1,0 +1,15 @@
+:root{
+    --font-1: 'Open Sans', sans-serif;
+    --font-2: 'Poppins', sans-serif;
+
+    --violet: hsl(257, 40%, 49%)
+    --softMagenta: hsl(300, 69%, 71%)
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--font-1);
+}
