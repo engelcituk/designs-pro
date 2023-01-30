@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-color: #f2f2f2;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.gallery{
+    width: 90%;
+    max-width: 1200px; /*Para evitar que se haga más grandes que tienen más pixeles*/
+    overflow: hidden; /*Para que todo lo que salga en este elemento se oculte*/
+    margin: 0 auto; /*centro de manera horizontal*/
+    padding: 60px 0; /*60px arriba/abajo y 0 de izq/derecha*/
+}
+
+.gallery__title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.gallery__container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /*Si los flex item no caben en la linea, creen nuevas líneas*/
+}
+.gallery__picture{ /*Es el flex item de gallery__container*/
+    flex-basis: 300px; /*Tamaño base, esto es posible debido a que el flex container tiene definido flex-wrap: wrap*/
+    flex-grow: 1; /*Esto es para que ocupe todo el espacio sobrante, factor de crecimiento de 1*/
+    /*flex: 300px; Esto resume flex-grow: 1; flex-shrink:1; flex-basis: 300px; */
+}
+
+.gallery__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
