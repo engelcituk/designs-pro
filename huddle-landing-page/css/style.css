@@ -17,10 +17,6 @@ body{
     font-family: var(--font-1);
 }
 
-.hero{
-    background-color: var(--violet);
-}
-
 .container{
     width: 90%;
     margin: 0 auto; /*centro de manera horizontal*/
@@ -28,6 +24,7 @@ body{
     overflow: hidden; /*Todo lo que sale del container se sale*/
     max-width: 1200px; /*le doy un ancho maximo de 1200px*/
     padding: var(--paddingContainer);
+    position: relative; /*Para que todos los elementos de este sobrepasen a la imagen de fodo de hero::before*/
 }
 
 .nav{
@@ -37,6 +34,23 @@ body{
 .nav__logo{
     width: 150px;
     display: block; /*proque las imagenes que no tienen un display block tienen un pequeño margen abajo*/
+}
+
+.hero{
+    background-color: var(--violet);
+    position: relative;
+}
+/* Requiere que previamente hero sea relative */
+.hero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    /* background-color: black; */
+    background-image: url('../images/bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 400px; /*100% en X y 400px en Y*/
 }
 
 .hero__container{
@@ -76,4 +90,62 @@ body{
     padding: 1rem 6rem;
     border-radius: 2rem;
     box-shadow: 0 1px rgba(0, 0, 0, .5);/*Sobra 0 en x, 1px en y, 4px de blur y un color negro con transparencia en .5*/
+}
+
+.hero__contact{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.hero__link{
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__icon{
+    width: 23px;
+}
+
+@media (min-width: 768px) {
+    .hero::before{
+        height: 100%;
+        background-image: url('../images/bg-desktop.svg');
+        background-size: 100% 100%; /*100% en X y 100% en Y*/
+    }
+
+    .hero__container{
+        flex-direction: row;
+        flex-wrap: wrap; /*Para que los elementos se desborden, osea ocupen otras lineas, creen otra linea*/
+        justify-content: space-between;
+        align-items: center;
+        --paddingContainer: 20px 0 60px;
+    }
+
+    .hero__picture{
+        flex-basis: 45%;
+    }
+
+    .hero__img{
+        max-width: unset;
+    }
+
+    .hero__texts{
+        flex-basis: 50%;
+        text-align: left;
+    }
+
+    .hero__title{
+        font-size: 2rem;
+    }
+
+    /* Al desbordarse el hero contact, se posiciona a la izquirda, para pasarlo a la derecha */
+    .hero__contact{
+        margin-left: auto; /*Para pasarlo a la derecha*/
+    }
 }
