@@ -38,3 +38,67 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.card__texts{
+    padding: 2.5rem 1.7rem;
+    text-align: center; /*centro los textos*/
+}
+
+.card__title{
+    font-size: 1.7rem;
+    color: var(--darkBlue);
+}
+
+.card__paragraph{
+    color: var(--desaturatedBlue);
+    line-height: 1.5;
+    margin: 1.2rem 0 1.5rem;
+}
+
+.card__plan{
+    display: flex;   
+    align-items: center;
+    background-color: var(--veryPaleBlue);
+    padding: 1.2rem 1rem;
+}
+
+.card__icon{
+    margin-right: 1.8rem;
+}
+
+.card__name{
+    font-size: 1rem;
+    color: var(--darkBlue);
+}
+
+.card__change{
+    margin-left: auto; /*Para moverlo muy a la derecha*/
+    color: var(--brightBlue);
+    text-decoration: none;
+}
+
+.card__cta{
+    display: block; /*Elemento ancord es inline, display: block hace que ocupen el 100% del contenedor, como si fuera un div*/
+    background-color: var(--brightBlue);
+    color: #fff;
+    text-decoration: none;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-weight: 700;
+    box-shadow: 0 10px 10px -8px var(--brightBlue); /*0 en X, 10px en Y, 10px de blur -8px de spread, con el color*/
+}
+
+.card__cta-gray{
+    margin-top: .7rem;
+    background-color: #fff;
+    color: var(--desaturatedBlue);
+    box-shadow: none;
+}
+
+@media (min-width:768px){
+    body{
+        background-image: url('../images/pattern-background-desktop.svg');
+        background-repeat: no-repeat;
+    }
+}
