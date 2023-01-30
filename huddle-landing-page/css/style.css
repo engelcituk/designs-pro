@@ -2,14 +2,78 @@
     --font-1: 'Open Sans', sans-serif;
     --font-2: 'Poppins', sans-serif;
 
-    --violet: hsl(257, 40%, 49%)
-    --softMagenta: hsl(300, 69%, 71%)
+    --violet: hsl(257, 40%, 49%);
+    --softMagenta: hsl(300, 69%, 71%);
+
+    --paddingContainer: 60px 0;
 }
 
 *{
     margin: 0;
     box-sizing: border-box;
 }
+
 body{
     font-family: var(--font-1);
+}
+
+.hero{
+    background-color: var(--violet);
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto; /*centro de manera horizontal*/
+    /* background-color: #000; */
+    overflow: hidden; /*Todo lo que sale del container se sale*/
+    max-width: 1200px; /*le doy un ancho maximo de 1200px*/
+    padding: var(--paddingContainer);
+}
+
+.nav{
+    --paddingContainer: 30px 0;
+}
+
+.nav__logo{
+    width: 150px;
+    display: block; /*proque las imagenes que no tienen un display block tienen un pequeño margen abajo*/
+}
+
+.hero__container{
+    display: flex;
+    align-items: center; /*Centrar horizontalmente a los elementos*/
+    flex-direction: column;
+}
+
+.hero__img{
+    max-width: 350px; /*si la imagen llega a los 350px, este no se haga más grande*/
+    width: 100%;
+    display: block; /*proque las imagenes que no tienen un display block tienen un pequeño margen abajo*/
+    margin: 0 auto; /*Centrar la imagen en el viewport si este crece*/
+}
+
+.hero__texts{
+    margin: 3.5rem 0;
+    color: #fff;
+    text-align: center;
+}
+
+.hero__title{
+    font-size: 1.7rem;
+    font-family: var(--font-2);
+}
+
+.hero__paragraph{
+    line-height: 1.5;
+    margin: 1.2rem 0 1.7rem;
+}
+
+.hero__cta {
+    display: inline-block; /*Para que acepte propiedades como el padding o el margin*/
+    color: var(--violet);
+    background-color: #fff;
+    text-decoration: none;
+    padding: 1rem 6rem;
+    border-radius: 2rem;
+    box-shadow: 0 1px rgba(0, 0, 0, .5);/*Sobra 0 en x, 1px en y, 4px de blur y un color negro con transparencia en .5*/
 }
