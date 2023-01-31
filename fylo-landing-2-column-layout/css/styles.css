@@ -117,3 +117,47 @@ body{
     font-weight: 700;
     margin-top: 1.2rem;
 }
+
+/* Seccion productive */
+
+.productive{
+    background-color: var(--lightGrayishBlue);
+    --paddingContainer: 30px 0 90px;
+}
+
+.productive__img{
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /*Que se centre la imagen*/
+    display: block; /*Quita el margen inferior por defecto de las imagenes y lo vuelve un elemento de tipo bloque*/
+}
+
+.productive__main{
+    margin-top: 6rem;
+}
+
+.productive__title{
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--veryDarkBlue);
+    font-family: var(--font2);
+}
+
+.productive__paragraph{
+    color: var(--desaturatedBlue);
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+/* El ultimo parafo */
+.productive__paragraph:last-of-type{
+    margin: 0;
+}
+
+.productive__cta{
+    display: block;/*Para que se vuelve un elemento bloque el anchor*/
+    width: max-content; /*maximo contenido*/
+    margin: 2rem auto 3rem; /*centre horizontal, Esto es posible ya que ya es un elemento de tipo bloque, indicado mediante display: block;*/
+    text-decoration: none;
+}
