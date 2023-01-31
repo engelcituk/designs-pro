@@ -55,3 +55,65 @@ body{
     color: var(--desaturatedBlue);
     font-family: var(--font2);
 }
+
+.hero{
+    position: relative;
+    --paddingContainer: 90px 0 170px;
+}
+
+.hero::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    /* background-color: black; */
+    background-image: url('../images/bg-curve-mobile.svg');
+    background-repeat: no-repeat;/*Para que no se repita el fondo*/
+    background-size: cover;
+    background-position: center;/*centra la wave*/
+    left: 0; /*Lo pego a la izquierda*/
+    bottom: 0; /*lo mando para abajo*/
+}
+
+.hero__img{
+    width: 100%;
+    display: block; /*Quita el margen inferior por defecto de las imagenes y lo vuelve un elemento de tipo bloque*/
+    max-width: 400px; /*que mida el 100% pero que no rebase los 400px*/
+    margin: 0 auto; /*Cuando la imagen se centra*/
+}
+
+/* contenedor de los textos */
+
+.hero__info{
+    text-align: center;
+    color: var(--veryDarkBlue);
+}
+
+.hero__title{
+    font-size: 1.7rem;
+    font-family: var(--font2);
+    margin-top: 1.8rem;
+}
+
+.hero__paragraph{
+    line-height: 1.5;
+    margin: 1.5rem 0;
+}
+
+.hero__input{
+    height: 45px;
+    border-radius: 6px;
+    width: 100%;
+    border: 1px solid var(--veryDarkBlue);
+    padding: 0 20px;
+
+    font-family: var(--font2);
+}
+
+.hero__input--cta{
+    background-color:var(--brightBlue);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    margin-top: 1.2rem;
+}
