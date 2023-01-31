@@ -9,6 +9,8 @@
 
     --font1: 'Open Sans', sans-serif;
     --font2: 'Raleway', sans-serif;
+
+    --paddingContainer: 90px 0;
 }
 
 *{
@@ -18,4 +20,38 @@
 
 body{
     font-family:var(--font1);
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: var(--paddingContainer);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    --paddingContainer: 40px 0;
+}
+
+.nav__logo{
+    width: 110px;
+}
+
+.nav__img{
+    width: 100%;
+    display: block; /*PARa que se ajuste a su contenedor y quite el borde abajo que se presenta en las imagenes poer defecto*/
+}
+/* Selecciono al primer elemento nav link */
+.nav__link:first-of-type{
+    margin-left: auto; /*Para pasarlos al final, esto alinea todos los enlaces a la derecha*/
+}
+
+.nav__link{
+    text-decoration: none;
+    color: var(--desaturatedBlue);
+    font-family: var(--font2);
 }
