@@ -306,3 +306,88 @@ body{
     height: 20px;
     margin: auto; /*centra hacia todos los lados*/
 }
+
+@media (min-width:768px){
+    .hero{
+        --paddingContainer: 90px 0 200px;
+    }
+    
+    .hero::before{
+        background-image: url('../images/bg-curve-desktop.svg');
+    }
+    
+    .hero__main{
+        display: flex; /*Para que se pongan uno al lado del otro*/
+        align-items: center; /*centrado vertical*/
+        gap: 1.5rem;
+    }
+
+    .hero__img{ 
+        max-width: none; /*que no tenga limite de crecimiento*/
+    }
+    
+    /* contenedor de los textos */
+    
+    .hero__info{
+        order: -1; /*Lo mando a la izquierda, ya que este está a la derecha como segundo elemento*/
+        text-align: left;
+    }
+    
+    .hero__title{
+        font-size: 2.3rem;
+        margin-top: 0rem; /*quito margin, ya no tiene nada arriba*/
+    }
+    
+    .hero__contact{
+        display: flex;
+        gap: 1rem;
+    }
+
+    .hero__input{
+        min-width: 160px;
+        flex-grow: 1; /*Para que ocupe todo el espacio disponible, si el viewport aumenta*/
+    }
+    
+    .hero__input--cta{
+        margin-top: 0; /*Le quito el margin top que viene trayendo en el movil viewport*/
+        flex-grow: 0; /*No crece, aunque el viewport aumente*/
+        width: 160px;
+    }
+
+    /* Seccion productive */
+    .productive__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .productive__picture{
+        order: 1; /*Para pasarlo en la derecha*/
+        width: 45%;
+    }
+
+    .productive__img{
+        max-width: none; /*Para desactiva el limite de crecimiento*/
+    }
+
+    .productive__main{
+        margin-top: 0; /*remuevo el margin top*/
+        width: 52%;
+    }
+
+    .productive__title{
+        font-size: 2.1rem;
+        text-align: left;
+
+    }
+
+    .productive__cta{
+        margin: 2rem 0 3rem; /*Le quito el centrado*/
+    }
+
+    .productive__testimony{
+        max-width: 420px;
+        margin: 2px;
+    }
+    
+}
