@@ -74,3 +74,49 @@ body{
     box-shadow: 0 0 10px -5px var(--lightBlue); /*0 en x, 0 en Y, 10px de blur, -5px de spread */
     background-color: var(--lightBlue);
 }
+
+/* Track */
+
+.track__texts{
+    text-align: center;
+    /* color: var(--darkGrayishBlue); */
+}
+
+.title{
+    color: var(--darkGrayishBlue);
+    font-size: 2rem;
+
+}
+
+.paragraph{
+    line-height: 1.5;
+    color: var(--grayishBlue);
+    margin-top: 1.5rem;
+}
+
+.track__img{
+    width: 100%;
+    display: block; /*Lo vuelve tipo bloque y quita el margen inferior que trae las img por defecto*/
+    max-width: 400px; /*Si el viewport crece, la imagen crece pero solo llega hasta los 400px*/
+    margin: 0 auto; /*centrado, para que un elemento centre con este regla (margenes automaticos), debe ser de tipo bloque, debe tener un width definido y un margin auto*/
+    margin-top: 3.5rem; /*Para que aplique debe estar despues de la regla margin: 0 auto; */
+}
+
+.track__articles{
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.track__offer{
+    color: var(--darkGrayishBlue);
+    font-size: 1.5rem;
+}
+
+.track__copy{
+    margin-top: 1.7rem;
+    line-height: 1.5;
+    color: var(--grayishBlue);
+}
