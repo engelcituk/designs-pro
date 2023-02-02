@@ -24,7 +24,7 @@ body{
     max-width: 1200px; /*Su ancho máximo sea de 1200px de ahi no segui creciendo el viewport*/
     width: 90%;
     margin: 0 auto; /*centro el container*/
-    overflow: hidden; /*Todo lo que salga de container se esconda*/
+    overflow: hidden; /*Todo lo que salga de container se esconda, sino va generar un scroll horizontal*/
     padding: var(--paddingContainer);
 }
 
@@ -119,4 +119,47 @@ body{
     margin-top: 1.7rem;
     line-height: 1.5;
     color: var(--grayishBlue);
+}
+
+/* CLIPBOARD */
+
+.clipboard{
+    text-align: center; /*Para que todos sus textos se centren*/
+}
+
+.clipboard__picture{ /*contenedor de la img*/
+    margin: 3rem 0 6rem;
+}
+
+.clipboard__img{
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /*centrado horizontal, para que un elemento centre con este regla (margenes automaticos), debe ser de tipo bloque, debe tener un width definido y un margin auto*/
+}
+
+/*contenedor de la oferta*/
+.clipboard__offer{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.clipboard__icon{
+    display: block;
+    width: 45px;
+    margin: 0 auto; /*centrado horizontal, para que un elemento centre con este regla (margenes automaticos), debe ser de tipo bloque, debe tener un width definido y un margin auto*/
+    margin-bottom: 1.5rem;
+}
+
+.clipboard__title{
+    font-size: 1.5rem;
+    color: var(--darkGrayishBlue);
+}
+
+.clipboard__paragraph{
+    color: var(--grayishBlue);
+    line-height: 1.5;
+    margin-top: 1rem;
 }
