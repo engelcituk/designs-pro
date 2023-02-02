@@ -19,3 +19,58 @@
 body{
     font-family: var(--font);
 }
+
+.container{
+    max-width: 1200px; /*Su ancho máximo sea de 1200px de ahi no segui creciendo el viewport*/
+    width: 90%;
+    margin: 0 auto; /*centro el container*/
+    overflow: hidden; /*Todo lo que salga de container se esconda*/
+    padding: var(--paddingContainer);
+}
+
+.hero{
+    --paddingContainer: 120px 0 80px; /*Sobrescribo el padding container 120px arriba, 0izq/derecha y 80px abajo*/
+    background-image: url('../images/bg-header-mobile.png');
+    background-repeat: no-repeat; /*Que no se repita*/
+    background-size: 100%;
+    text-align: center; /*alineo el texto al centro*/
+}
+
+.hero__img{
+    display: block; /*Lo vuelvo un bloque y se quita igual los margenes inferiores que traen las img por defecto*/
+    margin: 0 auto; /*Centro de manera horizontal la img*/
+    margin-bottom: 4.5rem; /*Se pone despues para no sobreescribir lo de margin: 0 auto;*/
+}
+
+.hero__title{
+    color: var(--darkGrayishBlue);
+    margin-bottom: 1rem;
+}
+
+.hero__paragraph{
+    color: var(--grayishBlue);
+    line-height: 1.5;
+}
+
+.buttons{
+    margin-top: 2.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center; /*centrar los textos*/
+}
+
+.buttons__cta{
+    background-color: var(--strongCyan);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 2rem;
+    padding: 1rem 0; /*1rem arriba/abajo 0 a los costados*/ 
+    font-weight: 600;
+    box-shadow: 0 0 10px -5px var(--strongCyan); /*0 en x, 0 en Y, 10px de blur, -5px de spread */
+}
+
+.buttons__cta--blue{
+    box-shadow: 0 0 10px -5px var(--lightBlue); /*0 en x, 0 en Y, 10px de blur, -5px de spread */
+    background-color: var(--lightBlue);
+}
