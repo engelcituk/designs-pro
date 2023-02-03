@@ -63,7 +63,7 @@ body{
 /* pseudoelemento que se pondría antes de los textos */
 .hero__main::before{
     content: '';
-    display: block; /*Para que se le pueda darles un height y width*/
+    display: block; /*Para que se le pueda darles un height y width y que aparezca visible*/
     height: 300px;
     width: 100%;
     background-image: url('../images/image-intro-mobile.jpg');
@@ -96,4 +96,55 @@ body{
     text-decoration: none;
     color: #fff;
     padding: .8rem 2.2rem;
+}
+
+/* DIFFERENT */
+.different{
+    text-align: center;
+
+}
+
+.title--different{
+    padding-top: 30px;
+    position: relative;
+}
+
+/* Si quiero una rayita antes del titulo se puede lograr asi con un pseudoelemento */
+.title--different::before{
+    content: '';
+    position: absolute; /*Para poder jugar con top, right, left*/
+    top: -5px;
+    right: 0;
+    left: 0;
+    display: block; /*Para que se le pueda darles un height y width y que aparezca visible*/
+    margin: 0 auto; /*se pude centrar los pseudoelementos*/
+    background-color: var(--darkGrayishViolet);
+    width: 120px;
+    height: 1px;
+}
+
+/* flex container de articles */
+.different__items{
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.different__icon{
+    display: block; /*Los convierto a bloque y de paso se elimina el margen inferior*/
+    margin: 0 auto; /*centro de manera horizontal*/
+    margin-bottom: 2rem;
+}
+
+.different__title{
+    font-family: var(--font1);
+    font-size: 1.5rem;
+    letter-spacing: 3px; /*separacion entre cada letra del titulo*/
+}
+
+.different__paragraph{
+    margin-top: 1rem;
+    color: var(--darkGrayishViolet);
+    line-height: 1.5;
 }
