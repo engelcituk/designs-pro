@@ -21,3 +21,52 @@
 body{
     font-family: var(--font2);
 }
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--paddingContainer);
+}
+
+.hero{
+    background-color: var(--darkViolet); /*Contiene a todo, su fondo es violeta*/
+    color: #fff;
+    --paddingContainer: 0;
+}
+
+.nav{
+    background-color: #fff; /*este es blanco y cubre el color violeta previo del hero*/
+}
+
+.nav__container{
+    height: 80px;
+    display: flex;
+    align-items: center; /*centro los elementos horizontalmente*/
+    justify-content: space-between;
+}
+/* En moviles no es visible los links */
+.nav__links{
+    display: none;
+}
+
+.nav__icon,
+.nav__logo{
+    display: block; /*Los convierto a bloque y de paso se elimina el margen inferior*/
+}
+
+.hero__main{
+    width: 100%; /*tiene un hijo (vendria siendo la imagen, que se agregaria mediante pseudoelemento) que ocuparía el 100%*/   
+}
+
+/* pseudoelemento que se pondría antes de los textos */
+.hero__main::before{
+    content: '';
+    display: block; /*Para que se le pueda darles un height y width*/
+    height: 300px;
+    width: 100%;
+    background-image: url('../images/image-intro-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+}
