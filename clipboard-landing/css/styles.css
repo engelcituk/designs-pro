@@ -266,7 +266,7 @@ body{
     .track__texts{
        width: 90%;
        margin: 0 auto;
-       margin-bottom: 3.5rem;
+       margin-bottom: 1.5rem;
     }
 
     .track__picture{
@@ -306,4 +306,68 @@ body{
         color: var(--grayishBlue);
     }
 
+    /* CLIPBOARD */
+
+    .clipboard{
+        --paddingContainer: 20px 0 80px;
+    }
+    
+    .clipboard__img{
+        max-width: 700px;
+    }
+
+    /*contenedor de la oferta*/
+    .clipboard__offer{
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .clipboard__item{
+        flex: 1; /*grow:1; shrink:1; basis: 0... para que reparta el espacio equitativamente entre los elementos*/
+    }
+
+    /* Brands */
+
+    .brands{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .brands__item{
+        min-width: 100px;
+        max-width: 130px;
+        flex: 1; /*Para que las imagenes se  estiren*/
+    }
+
+    /*FOOTER*/
+
+    .footer__container{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .footer__img{
+        width: 70px ;
+    }
+
+    .footer__links{
+        margin: 0;
+       
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center; /*que se centren horizontalmente*/
+    }
+
+    .footer__link{
+        width: 28%;
+    }
+
+    .footer__social{
+        margin-left: auto; /*Con esto los paso a la derecha*/
+    }   
 }
