@@ -75,7 +75,7 @@ body{
     background-color: var(--lightBlue);
 }
 
-/* Track */
+/* TRACK */
 
 .track__texts{
     text-align: center;
@@ -184,11 +184,6 @@ body{
     text-align: center;
 }
 
-.footer__img{
-    display: block; /*Lo vuelve tipo bloque y quita el margen inferior que trae las img por defecto*/
-    width: 100px;
-    margin: 0 auto; /*Para centrarlo horizontalmente*/
-}
 
 .footer__links{
     margin: 4rem 0;
@@ -222,5 +217,93 @@ body{
 }
 
 @media (min-width:768px) {
-    
+    .hero{
+        --paddingContainer: 120px 0 90px;
+        background-image: url('../images/bg-header-desktop.png');
+    }
+
+    .hero__img{
+        display: block; /*Lo vuelvo un bloque y se quita igual los margenes inferiores que traen las img por defecto*/
+        margin: 0 auto; /*Centro de manera horizontal la img*/
+        margin-bottom: 4.5rem; /*Se pone despues para no sobreescribir lo de margin: 0 auto;*/
+    }
+
+    .hero__title{
+        font-size: 2.5rem;
+    }
+
+    .buttons{
+        margin-top: 3em;
+        flex-direction: row;
+        justify-content: center;   
+    }
+
+    .buttons__cta{
+        padding: 1rem 3rem; /*1rem arriba/abajo 3rem a los costados*/    
+    }
+
+    .buttons__cta--blue{
+        box-shadow: 0 0 10px -5px var(--lightBlue); /*0 en x, 0 en Y, 10px de blur, -5px de spread */
+        background-color: var(--lightBlue);
+    }
+
+    /* TRACK */
+
+    /* track es el contenedor */
+
+    .title{
+        font-size: 2.5rem;
+    }
+
+    .track{
+        --paddingContainer: 80px 0 0; /*80px arriba*/
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .track__texts{
+       width: 90%;
+       margin: 0 auto;
+       margin-bottom: 3.5rem;
+    }
+
+    .track__picture{
+        position: relative;
+        width: 50%;
+        overflow: hidden;
+        height: 700px;
+    }
+
+    .track__img{
+        width: 125%;
+        max-width: 650px; /*Si el viewport crece, la imagen crece pero solo llega hasta los 400px*/
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        margin-top: auto 0; /*Para que aplique debe estar despues de la regla margin: 0 auto; */
+    }
+
+    .track__articles{
+        width: 42%;
+        gap: 3rem;
+        margin: 0 auto; /*centrado para que no se pegue mucho a la derecha*/
+        text-align: left;
+        align-self: center;
+    }
+
+    .track__offer{
+        color: var(--darkGrayishBlue);
+        font-size: 1.5rem;
+    }
+
+    .track__copy{
+        margin-top: 1.7rem;
+        line-height: 1.5;
+        color: var(--grayishBlue);
+    }
+
 }
