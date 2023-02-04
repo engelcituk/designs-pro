@@ -148,3 +148,97 @@ body{
     color: var(--darkGrayishViolet);
     line-height: 1.5a;
 }
+
+/* FIND */
+.find{
+    padding: 80px 0;
+    --paddingContainer: 60px 30px;
+}
+
+.find__container{
+    position: relative; /*para que podamos darle un position absolute al pseudoelemento*/
+    background-color: var(--darkViolet);
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
+
+.find__container::before{
+    content: '';
+    position: absolute;
+    top: 0; /*arriba*/
+    right: 0;/*derecha*/
+    width: 50%;
+    height: 100%;
+    background-image: url('../images/bg-pattern-how-we-work-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* FOOTER */
+
+.footer{
+    background-color: var(--veryLightGray);
+    position: relative; /*para que podamos darle un position absolute al pseudoelemento*/
+    z-index: 1;
+}
+
+.footer__brand{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--darkGrayishViolet);
+}
+
+.footer::before{
+    content: '';
+    position: absolute;
+    top: 0; /*arriba*/
+    right: 0;/*derecha*/
+    width: 100%;
+    height:42%;
+    background-image: url('../images/bg-pattern-footer-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.footer__logo{
+    display: block;  /*Los convierto a bloque y de paso se elimina el margen inferior*/
+}
+
+.footer__media{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__navigation{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.footer__nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer__link{
+    text-decoration: none;
+    color: var(--darkViolet);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footer__link--first{
+    margin-bottom: 1rem;
+    color: var(--darkGrayishViolet);
+}
