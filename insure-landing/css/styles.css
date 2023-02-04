@@ -11,6 +11,8 @@
 
     --paddingContainer: 80px 0; /*80px arriba y cero hacia los lados*/
 
+    scroll-padding-top: 80px; /*arregla que al dar en el menu hambugguesa este baje hacia abajo*/
+
 }
 
 *{
@@ -46,9 +48,56 @@ body{
     align-items: center; /*centro los elementos horizontalmente*/
     justify-content: space-between;
 }
-/* En moviles no es visible los links */
+
+.nav__links:target{
+    clip-path: circle(150% at top left);
+}
+
+/* cuando nav links esté siendo apuntado, quiero que seleccione a su hermano nav__hamburguer--last( mediante virgulilla ~ ) */
+.nav__links:target ~ .nav__hamburguer--last{
+    display: block;
+}
+
+/* En moviles no es visible los links, a menos que se haga visible mediante el btn hamburguer*/
 .nav__links{
+    position: absolute;
+    top: 80px;
+    bottom: 0; /*Esto hará que se extienda hasta abajo del viewport*/
+    /* Que vaya de izquierda a derecha con las reglas left: 0; right: 0;*/
+    left: 0; 
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 3rem;
+    background-color: #000;
+    clip-path: circle(0% at top left);
+
+    /* Transicion de .4s para clip-path*/
+    transition: .4s clip-path;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;    
+}
+
+.nav__link--cta{
+    color: #fff;
+    border: 1px solid var(--veryDarkViolet);
+    padding: .8rem 2rem; /*.8 rem arriba/abajo y 2rem a los costados*/
+}
+
+
+/* Para que salga del flujo de flexbox */
+.nav__hamburguer--last{
     display: none;
+    position: absolute;
+    right: 5%;
+    top: 24px;
 }
 
 .nav__icon,
@@ -245,27 +294,37 @@ body{
 
 @media (min-width: 768px) {
 
-    
-    
-    /* En moviles no es visible los links */
-    .nav__links{
-        display: flex;
-        gap: 2rem;
+    .nav__links:target{
+        clip-path: unset; /*le quitamos el clippat*/
     }
     
-    .nav__link{
-        text-decoration: none;
-        color: var(--darkGrayishViolet);
-        text-transform: uppercase;
-        font-weight: 700;
+    /* cuando nav links esté siendo apuntado, quiero que seleccione a su hermano nav__hamburguer--last( mediante virgulilla ~ ) */
+    .nav__links:target ~ .nav__hamburguer--last{
+        display: none; /*que no se muestre el icono de cerrar*/
+    }
+    
+    /* En moviles no es visible los links, a menos que se haga visible mediante el btn hamburguer*/
+    .nav__links{
+        display: flex;        
+        gap: 3rem;
+        position: unset;        
+        flex-direction: row;        
+        padding-top: 0;
+        background-color: #fff;
+        clip-path: unset;
+        transition: unset;
+    }
+    
+    .nav__link{        
+        color: var(--darkGrayishViolet);        
         padding: .8rem 0; /*.8 rem arriba/abajo y 0 a los costados*/
     }
 
     .nav__link--cta{
-        color: var(--darkViolet);
-        border: 1px solid var(--veryDarkViolet);
+        color: var(--darkViolet);        
         padding: .8rem 2rem; /*.8 rem arriba/abajo y 2rem a los costados*/
     }
+
     .nav__hamburguer{
         display: none;
     }
@@ -308,22 +367,90 @@ body{
     }
 
     .title{
-        font-size: 2.5rem;
-        font-family: var(--font1);
-        letter-spacing: 3px;
+        font-size: 2.7rem;                
     }
     
-    .hero__paragraph{
-        line-height: 1.5;
-        margin-top: 1rem;
+    /* DIFFERENT */
+    .different{
+        text-align: left;
+
     }
-    
-    .cta{
-        display: inline-block; /*Sino se pone esto, como que se sobrepone sobre el texto*/
-        margin-top: 1.5rem;
-        border: 1px solid #fff;
-        text-decoration: none;
-        color: #fff;
-        padding: .8rem 2.2rem;
+   
+    /* Si quiero una rayita antes del titulo se puede lograr asi con un pseudoelemento */
+    .title--different::before{       
+        margin: 0; /*Para que el pseudoelemento se mueva al principio*/       
     }
+
+    /* flex container de articles */
+    .different__items{              
+        flex-direction: row;
+        gap: 2rem;
+    }
+    /* flex item,  */
+    .different__item{
+        flex: 1; /*Para que todos los elementos repartar sus contendidos de manera equitativamente*/
+    }
+
+    .different__icon{
+        margin-left: 0;
+    }
+
+
+    /* FIND */
+    .find{
+        --paddingContainer: 60px;
+    }
+
+    .find__container{
+        display: flex;
+        justify-content: space-between; /*distribuye los elementos empezando desde los costados/esquinas hasta llegar al centro*/
+        align-items: center; /*alinee los flex item horizontalmente*/
+        text-align: center;
+    }
+
+    .find__container::before{      
+        background-image: url('../images/bg-pattern-how-we-work-desktop.svg');  /*Lo unico que se cambia es la imagen*/     
+    }
+
+    .title--find{
+        width:60%;
+    }
+
+    /* FOOTER */
+    .footer__brand{        
+        flex-direction: row;
+        justify-content: space-between; /*distribuye los elementos empezando desde los costados/esquinas hasta llegar al centro*/
+        gap: 0;
+    }
+
+    .footer::before{        
+        top: 0; /*arriba*/
+        left: 0;/*izquierda*/
+        width: 50%;
+        height:60%;
+        background-image: url('../images/bg-pattern-footer-desktop.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+ 
+    .footer__navigation{
+        
+        flex-direction: row;
+        justify-content: space-between;        
+    }
+
+    /* 
+        Según el valor indicado, el main axis/cross axis, será:
+        row: horizontal, izquierda a derecha ------ cross Axis es vertical, de arriba a abajo
+        column: vertical, de arriba hacia abajo ------ el cross axis es horizontal, se vuelve de izquierda a derecha
+        row-reverse: horizontal, derecha a izquierda ------ el cross axis es vertical, abajo a arriba
+        column-reverse: vertical, de abajo hacia arriba ------ el cross axis es horizontal, se vuelve de derecha a izquierda
+    */
+    .footer__nav{
+        width: 20%; /*tamaño base de cada flex item*/
+        align-items: flex-start; /*manda los elementos al principio del cross axis (eje secundario) horizontal su sentido es dizquierda a derecha*/
+    }
+      
 }
