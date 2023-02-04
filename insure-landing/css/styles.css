@@ -71,11 +71,26 @@ body{
     align-items: center;
     gap: 3rem;
     padding-top: 3rem;
-    background-color: #000;
+    background-color: var(--darkViolet);
     clip-path: circle(0% at top left);
 
     /* Transicion de .4s para clip-path*/
-    transition: .4s clip-path;
+    transition: .4s clip-path;    
+}
+
+.nav__links::before{
+    position: inherit;
+    bottom: 0; /*Esto hará que se extienda hasta abajo del viewport*/
+    /* Que vaya de izquierda a derecha con las reglas left: 0; right: 0;*/
+    left: 0; 
+    right: 0;
+    content: '';
+    display: block; /*Para que se le pueda darles un height y width y que aparezca visible*/
+    height: 40%;
+    width: 100%;
+    background-image: url('../images/bg-pattern-mobile-nav.svg');
+    background-size: cover;
+    background-position: center;    
 }
 
 .nav__link{
@@ -314,7 +329,9 @@ body{
         clip-path: unset;
         transition: unset;
     }
-    
+    .nav__links::before{
+        display: none;
+    }
     .nav__link{        
         color: var(--darkGrayishViolet);        
         padding: .8rem 0; /*.8 rem arriba/abajo y 0 a los costados*/
