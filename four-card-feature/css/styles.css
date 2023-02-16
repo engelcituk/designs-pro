@@ -9,9 +9,6 @@
     --grayishBlue: hsl(229, 6%, 66%);
     --veryLightGray: hsl(0, 0%, 98%);
 
-    --paddingContainer: 90px 0;
-
-    --font1: 'Poppin', sans-serif;
 
 }
 
@@ -23,14 +20,53 @@
 }
 
 body{
-    font-family:var(--font1);
-    font-size: 15px;
+    font-family: 'Poppin', sans-serif;
+    background-color: var(--veryLightGray);
 }
 
-.container{
+.card{
     width: 90%;
     max-width: 1200px;
     overflow: hidden;
     margin: 0 auto;
-    padding: var(--paddingContainer);
+    padding: 80px 0;
+    text-align: center;
+}
+
+
+.card__title{
+    font-size: 1.7rem;
+    font-weight: 200;
+    line-height: 1.5;
+    color: var(--veryDarkBlue);
+}
+
+.card__title--bold{
+    font-weight: 600;
+}
+
+.card__paragraph{
+    line-height: 1.5;
+    color: var(--grayishBlue);
+    margin-top: 1.5rem;
+}
+
+.card__container{
+    padding-top: 80px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr; /*crear una columna de una fracción*/
+    grid-template-rows: repeat(4, 1fr); /*4 filas de una fracción*/
+    grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    ;
+    justify-items: center;  /*que sus grid item se centren horizontalmente*/
+    gap: 2.5rem;
+}
+
+.card__item{
+    width: 90%;
 }
