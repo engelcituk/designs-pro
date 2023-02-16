@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.gallery{
+    min-height: 100vh;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    overflow: hidden;
+
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-rows: 300px; /*Las filas que se crean de manera automatica midan 300px*/
+    /* auto-fit ajusta las columnas para ocupar todo el espacio disponible, sin dejar espacio restante. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*va crear columnas como sea posibles, con un minimo de 300px y un maximo de una fracción*/
+}
+
+.gallery__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
