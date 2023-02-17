@@ -28,6 +28,21 @@ body{
     display: grid;
     /* Alinee verticalemente al centro */
     align-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*creo columnas de manera dinamica, con un minimo de 300px y un maximo de una fracción*/
+
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: fade .8s .6s both ease-in;
+
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0; /*al 0% una opacidad de 0*/
+    }
+
+    100%{
+        opacity: 1; /*al 100% una opacidad de 1*/
+    }
 }
 
 .main__bg{
@@ -84,9 +99,8 @@ body{
 .main__cta{
     display: grid; 
     grid-auto-flow: column; /*para posicionar un elemento al lado del otro, flujo en columna*/
-    grid-auto-columns: max-content; /*cada columna qiue se cree automaticamente mida el maximo contenido*/
-    /* que horizontalmente centremos a esta grid */
-    justify-content: center;
+    grid-auto-columns: max-content; /*cada columna que se cree automaticamente mida el maximo contenido*/
+    justify-content: center; /* que horizontalmente centremos a esta grid */
     gap: 1rem;
     margin-top: 1.5rem;
     padding: 1rem 0;
@@ -98,4 +112,15 @@ body{
 
 .main__cta::before{
     content: url('../images/icon-cart.svg');
+}
+
+@media (min-width:667px) {
+    .main__bg{
+        border-radius: 10px 0 0 10px;
+        background-image: url('./../images/image-product-desktop.jpg');
+    }
+
+    .main__texts{
+        border-radius: 0 10px 10px 0;
+    }
 }
