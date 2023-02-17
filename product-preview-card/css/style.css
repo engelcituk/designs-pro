@@ -6,10 +6,96 @@
     --white: hsl(0, 0%, 100%);
 
     --fontHeadings: 'Fraunces', serif;
-    --font: 'Montserrat', sans-serif;
+    --font1: 'Montserrat', sans-serif;
 }
 
 *{
     box-sizing: border-box;
     margin: 0;
+}
+
+body{
+    background-color: var(--cream);
+    font-family: var(--font);
+}
+
+.main{
+    max-width: 800px;
+    min-height: 760px;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto; /*centro el contenedo horizontalmente*/
+    display: grid;
+    /* Alinee verticalemente al centro */
+    align-content: center;
+}
+
+.main__bg{
+    border-radius: 10px 10px 0 0;
+    min-height: 250px;
+    height: 100%; /*ocupe siempre el 100% de su contenedor*/
+    background-image: url('./../images/image-product-mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main__texts{
+    padding: 1.5rem 2rem;
+    background-color: var(--white);
+    border-radius: 0 0 10px 10px;
+}
+
+.main__product{
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--darkGrayishBlue);
+}
+
+.main__title{
+    font-family: var(--fontHeadings);
+    font-size: 2rem;
+    margin: .8rem 0 1.2rem;
+    color: var(--veryDarkBlue);
+}
+
+.main__paragraph{
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
+    color: var(--darkGrayishBlue);
+}
+
+.main__price{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    color: var(--darkCyan);
+    font-family: var(--fontHeadings);
+    letter-spacing: 2px;
+}
+
+.main__sold{
+    font-size: initial;
+    font-family: var(--font1);
+    text-decoration: line-through; /*marca con una linea en medio*/
+}
+
+.main__cta{
+    display: grid; 
+    grid-auto-flow: column; /*para posicionar un elemento al lado del otro, flujo en columna*/
+    grid-auto-columns: max-content; /*cada columna qiue se cree automaticamente mida el maximo contenido*/
+    /* que horizontalmente centremos a esta grid */
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+    background-color: var(--darkCyan);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.main__cta::before{
+    content: url('../images/icon-cart.svg');
 }
