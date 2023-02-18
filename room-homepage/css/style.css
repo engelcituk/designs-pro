@@ -15,3 +15,64 @@
 body{
     font-family: 'League Spartan', sans-serif;
 }
+
+.container{
+    width: 90%;
+    margin:0 auto;
+    padding: 60px 0;
+    overflow: hidden; /*todo lo que salga de este container se oculte*/
+}
+
+.main{
+    max-width: 1400px;
+    margin-top: 0 auto;
+    display: grid;
+    /* crear la grid de manera explicita, primer valor para las filas (5 filas de su max content o puede ser auto) / y una sola columna fr */
+    grid-template: repeat(5, max-content) / 1fr;
+    grid-template-areas:
+    "main"
+    "shop"
+    "image1"
+    "about"
+    "image2"
+    ;
+}
+
+.main__hero{
+    background-image: url('/../images/mobile-image-hero-1.jpg');
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    grid-area: main;
+}
+
+.main__nav{
+    display: flex;
+    align-items: center; /*centre de manera horizontal*/
+}
+
+.main__links{
+    display: none; /*en movile se va*/
+}
+
+.main__logo{
+    margin:0 auto; /*para que se centre en el main axis*/
+}
+
+.main__controls{
+    grid-area: main; /*un area puede ser ocupada por más de un grid item*/
+    /*tenemos propiedades para alinear a los hijos, main__controls es un gridItem o hijo de .main */
+    align-self: end;  /*que vaya al final de un colum*/
+    justify-self: end; /*que vaya al final de un row*/
+    /* place-self: end; su shorthand */
+    background-color: var(--black);
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main__arrows{
+    height: 40%;
+}
