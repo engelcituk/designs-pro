@@ -76,3 +76,68 @@ body{
 .main__arrows{
     height: 40%;
 }
+
+.main__shop{
+    grid-area: shop;
+}
+/* contenedor dentro de main shop */
+.main__content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main__title{
+    color: var(--black);
+    font-size: 2rem;
+}
+
+.main__paragraph{
+    line-height: 1.5;
+    margin: 1rem 0 2rem;
+    color: var(--darkGray);
+}
+
+.main__paragraph--about{
+    
+    margin: 1rem 0 0 0;
+}
+
+
+.main__cta{
+    text-decoration: none;
+    color: var(--veryDarkGray);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.main__arrow{
+    margin-left: 20px;
+}
+
+.main__bg{
+    grid-area: image1;
+    min-height: 250px;
+    height: 100%; /*al pasar a desktop ocupara todo el tamaño de su celda*/
+    background-image: url('./../images/image-about-dark.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main__about{
+    grid-area: about;
+}
+
+.main__bg--second{
+    grid: image2; 
+    min-height: 250px;
+    height: 100%; /*al pasar a desktop ocupara todo el tamaño de su celda*/
+    background-image: url('./../images/image-about-light.jpg');  
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
