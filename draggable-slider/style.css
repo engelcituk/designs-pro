@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #5372F0;
+    padding: 0 10px;
+}
+
+.wrapper{
+    position: relative;
+    background-color: #fff;
+    max-width: 1000px;
+    border-radius: 13px;
+    overflow-x: hidden; /*con overflow igual funciona*/
+    padding: 35px;
+}
+
+.wrapper .icon{ /*este div contiene dentro de este a los iconos*/
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 120px;
+    display: flex;
+    align-items: center;
+}
+/* el primer icono */
+.icon:first-child{
+    left: 0;
+    background: linear-gradient(90deg, #fff 70%, transparent);
+}
+/* solo hay dos iconos, por lo que sería el ultimo */
+.icon:last-child{
+    right: 0;
+    justify-content: flex-end; /*a la derecha*/
+    background: linear-gradient(-90deg, #fff 70%, transparent);
+}
+
+.icon:first-child i {
+    margin-left: 15px;
+}
+
+.icon:last-child i{
+    margin-right: 15px;
+}
+
+.icon i {
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    background-color: #d8d5f2 ;
+    font-size: 1.2rem; /*del icono*/
+    text-align: center; /*centra el icono horizontalmente*/
+    line-height: 55px; /*esto centro el icono dentro de su contenedor*/
+    border-radius: 50%;
+}
+
+.icon i:hover {
+    background-color: #efedfb;
+}
+
+.wrapper .tabs-box{
+    display: flex;
+    list-style: none;
+    gap: 12px;
+}
+
+.tabs-box .tab{
+    cursor: pointer;
+    font-size: 1.18rem;
+    background-color: #f5f4fd;
+    white-space: nowrap; /*Para que todo esté en una sola linea, no haga salto de linea*/
+    border: 1px solid #d8d5f2;
+    padding: 13px 20px;
+    border-radius: 30px;
+}
