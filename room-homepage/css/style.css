@@ -76,3 +76,118 @@ body{
 .main__arrows{
     height: 40%;
 }
+
+.main__shop{
+    grid-area: shop;
+}
+/* contenedor dentro de main shop */
+.main__content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main__title{
+    color: var(--black);
+    font-size: 2rem;
+}
+
+.main__paragraph{
+    line-height: 1.5;
+    margin: 1rem 0 2rem;
+    color: var(--darkGray);
+}
+
+.main__paragraph--about{
+    
+    margin: 1rem 0 0 0;
+}
+
+
+.main__cta{
+    text-decoration: none;
+    color: var(--veryDarkGray);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.main__arrow{
+    margin-left: 20px;
+}
+
+.main__bg{
+    grid-area: image1;
+    min-height: 250px;
+    height: 100%; /*al pasar a desktop ocupara todo el tamaño de su celda*/
+    background-image: url('./../images/image-about-dark.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main__about{
+    grid-area: about;
+}
+
+.main__bg--second{
+    grid-area: image2;
+    min-height: 250px;
+    height: 100%; /*al pasar a desktop ocupara todo el tamaño de su celda*/
+    background-image: url('./../images/image-about-light.jpg');          
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (min-width:768px) {
+    .container{
+        width: 85%;
+        padding: 70px 0;
+    }
+    .main{
+        grid-template-columns: repeat(7, 1fr);/*7 columnas de una fracción*/
+        grid-template-areas:
+        "main main main main shop shop shop"        
+        "main main main main shop shop shop"        
+        "main main main main shop shop shop"        
+        "image1 image1 about about about image2 image2"        
+        "image1 image1 about about about image2 image2"        
+        "image1 image1 about about about image2 image2"        
+        ;
+    } 
+
+    .main__hero{             
+        background-image: url('/../images/desktop-image-hero-1.jpg');    
+    }
+    .main__controls{
+        grid-area: shop; /*antes estaba en main, se pasa a area shop*/    
+        justify-self: start; /*que vaya al inicio de un row*/
+    } 
+    .main__hamburguer{
+        display: none;
+    }  
+    
+    .main__logo{
+        margin: 0; /*Esto hará que pase a la izquierda*/
+        min-width: 70px;
+    }
+
+    .main__links{
+        display: grid; /*esto hace que se le quite el none*/
+        padding: 0; /*por defecto tiene un padding, se lo quitamos*/
+        /* flujo en columnas */
+        grid-auto-flow: column; /*hará que uno esté al lado de otro*/
+        gap: 1rem;
+        margin-left: 10%;
+    }
+
+    .main__list{
+        list-style: none;        
+    }
+
+    .main__link{
+        color: var(--white);
+        text-decoration: none;
+    }
+}
